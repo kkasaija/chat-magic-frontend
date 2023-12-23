@@ -69,8 +69,8 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link]()
-- [Backend Link](git@github.com:Kasaija-Kenneth/chat-magic-backend.git)
+> [Live Demo Link]()
+> [Backend repo Link](git@github.com:Kasaija-Kenneth/chat-magic-backend.git)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
