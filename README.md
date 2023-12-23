@@ -69,7 +69,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> [Backend_Repo_Link](git@github.com:Kasaija-Kenneth/chat-magic-backend.git)
+> [Backend_Repo_Link](https://github.com/Kasaija-Kenneth/chat-magic-frontend/)
 
 > [Live_Demo_Link]()
 
