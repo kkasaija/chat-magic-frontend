@@ -1,44 +1,3 @@
-<a name="readme-top"></a>
-
-<!--
-!!! IMPORTANT !!!
-This README is an example of how you could professionally present your codebase. 
-Writing documentation is a crucial part of your work as a professional software developer and cannot be ignored. 
-
-You should modify this file to match your project and remove sections that don't apply.
-
-REQUIRED SECTIONS:
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
-
-OPTIONAL SECTIONS:
-- FAQ
-
-After you're finished please remove all the comments and instructions!
-
-For more information on the importance of a professional README for your repositories: https://github.com/microverseinc/curriculum-transversal-skills/blob/main/documentation/articles/readme_best_practices.md
--->
-
-<div align="center">
-  <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
-  <h3><b>Microverse README Template</b></h3>
-
-</div>
-
-<!-- TABLE OF CONTENTS -->
-
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
@@ -63,7 +22,7 @@ For more information on the importance of a professional README for your reposit
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 [CHAT-MAGIC_APP] <a name="about-project"></a>
 
 > Describe your project in 1 or 2 sentences.
 
@@ -72,8 +31,6 @@ For more information on the importance of a professional README for your reposit
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
-
-> Describe the tech stack and include only the relevant sections that apply to your project.
 
 <details>
   <summary>Client</summary>
@@ -92,7 +49,7 @@ For more information on the importance of a professional README for your reposit
 <details>
 <summary>Database</summary>
   <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+    <li><a href="https://www.mongodb.com/">MongoDB</a></li>
   </ul>
 </details>
 
@@ -112,9 +69,8 @@ For more information on the importance of a professional README for your reposit
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
-
-- [Live Demo Link](https://google.com)
+- [Live Demo Link]()
+- [Backend Link](git@github.com:Kasaija-Kenneth/chat-magic-backend.git)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -204,21 +160,13 @@ Example:
 
 <!-- AUTHORS -->
 
-## 👥 Authors <a name="authors"></a>
+## 👥 Author <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
+👤 **KASAIJA KENNETH**
 
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+> GitHub: [Github](https://github.com/Kasaija-Kenneth)</br> Twitter:
+> [X](https://twitter.com/kenn_ug)</br> LinkedIn:
+> [LinkedIn](https://linkedin.com/in/kasaija-kenneth)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -240,7 +188,8 @@ Example:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the
+[issues page](https://github.com/Kasaija-Kenneth/chat-magic-frontend/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -248,9 +197,8 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
-If you like this project...
+If you like this project please kindly give it a star⭐,
+[click here to star this project](https://github.com/Kasaija-Kenneth?tab=repositories)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -264,28 +212,17 @@ I would like to thank...
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FAQ (optional) -->
-
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-> Add at least 2 questions new developers would ask when they decide to use your project.
-
-- **[Question_1]**
-
-  - [Answer_1]
-
-- **[Question_2]**
-
-  - [Answer_2]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
 
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+_NOTE: we recommend using the
+[MIT license](https://choosealicense.com/licenses/mit/) - you can set it up
+quickly by
+[using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository).
+You can also use [any other license](https://choosealicense.com/licenses/) if
+you wish._
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
