@@ -1,4 +1,4 @@
-import DeleteUser from "./DeleteUser";
+import DeleteUser from "../components/DeleteUser";
 
 const Profile = () => {
   return (
