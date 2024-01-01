@@ -12,7 +12,12 @@ const Register = () => {
     return initialState;
   });
 
-  function handleInputChange() {}
+  function handleInputChange(e) {
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.id]: e.target.value,
+    }));
+  }
 
   return (
     <form>
@@ -22,6 +27,7 @@ const Register = () => {
         id="name"
         value={formData.name}
         onChange={handleInputChange}
+        placeholder="kasaija kenneth"
       />
 
       <label htmlFor="email">Email</label>
@@ -30,6 +36,7 @@ const Register = () => {
         id="email"
         value={formData.email}
         onChange={handleInputChange}
+        placeholder="example@email.com"
       />
 
       <label htmlFor="password">Password</label>
@@ -38,14 +45,16 @@ const Register = () => {
         id="password"
         value={formData.password}
         onChange={handleInputChange}
+        placeholder="**************"
       />
 
-      <label htmlFor="confirm_password">Name</label>
+      <label htmlFor="confirm_password">Confirm Password</label>
       <input
         type="text"
         id="confirm_password"
         value={formData.confirm_password}
         onChange={handleInputChange}
+        placeholder="**************"
       />
     </form>
   );
