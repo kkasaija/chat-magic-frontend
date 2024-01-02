@@ -1,0 +1,59 @@
+@import "./colors.scss";
+
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 50%;
+  align-self: center;
+}
+
+label {
+  color: $font-secondary;
+  margin-top: 5px;
+}
+
+input {
+  outline: none;
+  padding: 10px;
+  height: 6px;
+}
+
+button {
+  background-color: $btn-color_primary;
+  outline: none;
+  margin-top: 15px;
+  width: 30%;
+  align-self: center;
+  height: 30px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+p {
+  color: $font-color;
+}
+
+.redirect {
+  display: flex;
+  align-items: center;
+
+  p {
+    margin-right: 10px;
+  }
+
+  a {
+    color: $link-color;
+    font-weight: 500;
+    text-decoration: none;
+  }
+}
