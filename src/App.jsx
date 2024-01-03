@@ -4,13 +4,13 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Register from "./pages/Register";
-import PrivateRoutes from "./utils/PrivateRoutes";
-import { AuthProvider } from "./utils/AuthContext";
+import PrivateRoutes from "./components/PrivateRoutes";
+import { AuthContextProvider } from "./context/UserAuth";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <AuthProvider>
+      <AuthContextProvider>
         <Header />
         <Routes>
           <Route path="/login" element={<Login />} />
@@ -21,7 +21,7 @@ const App = () => {
             <Route path="/profile" element={<Profile />} />
           </Route>
         </Routes>
-      </AuthProvider>
+      </AuthContextProvider>
     </BrowserRouter>
   );
 };

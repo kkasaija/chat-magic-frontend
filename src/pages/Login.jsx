@@ -1,57 +1,53 @@
 /* eslint-disable no-unused-vars */
 import { useState, useEffect, useRef } from "react";
-import { useAuth } from "../utils/AuthContext";
+import UserAuth from "../context/UserAuth";
 import { useNavigate, Link } from "react-router-dom";
 import "../styles/Login.scss";
 
 const Login = () => {
-  // const initialState = {
-  //   email: "",
-  //   password: "",
-  // };
-
   const navigate = useNavigate();
-  const { user, logInUser } = useAuth();
+  const { loggedIn, setLoggedIn } = UserAuth();
 
-  const loginForm = useRef();
+  const initialState = {
+    email: "",
+    password: "",
+  };
 
-  useEffect(() => {
-    if (user) navigate("/");
+  const [formData, setFormData] = useState(() => {
+    return initialState;
   });
 
-  // const [formData, setFormData] = useState(() => {
-  //   return initialState;
-  // });
-
-  // function handleInputChange(e) {
-  //   setFormData((prevState) => ({
-  //     ...prevState,
-  //     [e.target.id]: e.target.value,
-  //   }));
-  // }
+  useEffect(() => {
+    if (loggedIn) navigate("/");
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const email = loginForm.current.email.value;
-    const password = loginForm.current.password.value;
-    const userInfo = { email, password };
-    logInUser(userInfo);
+    setFormData(initialState);
   };
+
+  function handleInputChange(e) {
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.id]: e.target.value,
+    }));
+  }
 
   return (
     <div className="login">
       <div>
         <p>Please enter your login credentials</p>
       </div>
-      <form ref={loginForm} onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="email">Email</label>
         <input
           type="email"
           id="email"
           name="email"
-          // value={formData.email}
-          // onChange={handleInputChange}
+          value={formData.email}
+          onChange={handleInputChange}
           placeholder="example@email.com"
+          autoComplete="on"
         />
 
         <label htmlFor="password">Password</label>
@@ -59,9 +55,9 @@ const Login = () => {
           type="password"
           id="password"
           name="password"
-          // value={formData.password}
-          // onChange={handleInputChange}
-          placeholder="**************"
+          value={formData.password}
+          onChange={handleInputChange}
+          placeholder="your password"
         />
         <button type="submit">Submit</button>
       </form>

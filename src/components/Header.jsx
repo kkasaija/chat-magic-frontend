@@ -1,10 +1,11 @@
+/* eslint-disable no-unused-vars */
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../utils/AuthContext";
+import UserAuth from "../context/UserAuth";
 import "../styles/Header.scss";
 
 const Header = () => {
   const navigate = useNavigate();
-  const { user } = useAuth();
+  const { loggedIn } = UserAuth();
 
   const logOut = () => {
     navigate("/login");
@@ -16,7 +17,7 @@ const Header = () => {
         <Link to="/">Logo</Link>
       </div>
       <div className="nav-links">
-        {user ? (
+        {loggedIn ? (
           <>
             <Link to="/">Home</Link>
             <Link to="/profile">Profile</Link>
