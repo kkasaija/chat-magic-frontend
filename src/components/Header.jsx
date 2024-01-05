@@ -1,15 +1,11 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import UserAuth from "../context/UserAuth";
 import "../styles/Header.scss";
 
 const Header = () => {
-  const navigate = useNavigate();
-  const { loggedIn } = UserAuth();
-
-  const logOut = () => {
-    navigate("/login");
-  };
+  const { userInfo, logOutUser } = UserAuth();
 
   return (
     <div className="container">
@@ -17,11 +13,13 @@ const Header = () => {
         <Link to="/">Logo</Link>
       </div>
       <div className="nav-links">
-        {loggedIn ? (
+        {userInfo.isLoggedIn ? (
           <>
             <Link to="/">Home</Link>
             <Link to="/profile">Profile</Link>
-            <button onClick={logOut}>Logout</button>
+            <Link to="/login" onClick={() => logOutUser()}>
+              Logout
+            </Link>
           </>
         ) : (
           <>

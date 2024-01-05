@@ -9,27 +9,69 @@ const UserAuth = () => {
 };
 
 const AuthContextProvider = ({ children }) => {
-  const [loggedIn, setLoggedIn] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  const getLoggedIn = async () => {
-    const res = await BaseUrl.get("/api/auth/loggedin").catch((err) => {
-      setLoggedIn(err.message);
-    });
-    setLoggedIn(res.data);
+  const initialState = {
+    user: null,
+    isLoggedIn: false,
+    error: {},
+    logInInfo: {},
+  };
+  const [userInfo, setUserInfo] = useState(() => initialState);
+
+  //check if user is loggedin When the app starts and when the user sends signin request
+  const checkUserStatus = async () => {
+    try {
+      const res = await BaseUrl.get("/api/auth/loggedin");
+      setUserInfo((prevState) => ({ ...prevState, isLoggedIn: res.data }));
+    } catch (err) {
+      setUserInfo((prevState) => ({ ...prevState, error: err.response }));
+    }
+  };
+
+  //send log in request to server
+  const logInUser = async () => {
+    setLoading(true);
+    try {
+      const res = await BaseUrl.post("/api/auth/signin", userInfo.logInInfo);
+      setUserInfo((prevState) => ({ ...prevState, user: res.data }));
+    } catch (error) {
+      setUserInfo((prevState) => ({ ...prevState, error }));
+    }
+    setLoading(false);
   };
 
   useEffect(() => {
-    getLoggedIn;
-  }, []);
+    setLoading(false);
+    checkUserStatus();
+  }, [userInfo.logInInfo]);
 
-  const contextData = {
-    loggedIn,
-    setLoggedIn,
-    getLoggedIn,
+  //logout user
+  const logOutUser = async () => {
+    try {
+      await BaseUrl.get("/api/auth/signout");
+      setUserInfo((prevState) => ({
+        ...prevState,
+        user: initialState.user,
+        isLoggedIn: initialState.isLoggedIn,
+      }));
+    } catch (err) {
+      setUserInfo((prevState) => ({ ...prevState, error: err.response }));
+    }
   };
 
+  const contextData = {
+    loading,
+    userInfo,
+    logInUser,
+    setUserInfo,
+    logOutUser,
+    checkUserStatus,
+  };
   return (
-    <AuthContext.Provider value={contextData}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={contextData}>
+      {loading ? <p>Loading.........</p> : children}
+    </AuthContext.Provider>
   );
 };
 
