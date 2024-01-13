@@ -1,5 +1,3 @@
-/* eslint-disable no-empty-pattern */
-/* eslint-disable no-unused-vars */
 import { createSlice } from "@reduxjs/toolkit";
 import { logInStatusCheck, logInUser, logOutUser } from "./authOps";
 
@@ -50,4 +48,4 @@ const authSlice = createSlice({
 });
 
 export default authSlice.reducer;
-export const {} = authSlice.actions;
+//export const {} = authSlice.actions;
