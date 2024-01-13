@@ -1,10 +1,10 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { logOutUser } from "../features/auth/authOps";
 import "../styles/Header.scss";
 
 const Header = () => {
+  const dispatch = useDispatch();
   const { isLoggedIn } = useSelector((state) => state.auth);
   return (
     <div className="container">
@@ -16,7 +16,7 @@ const Header = () => {
           <>
             <Link to="/">Home</Link>
             <Link to="/profile">Profile</Link>
-            <Link to="/login" onClick={() => logOutUser()}>
+            <Link to="/login" onClick={() => dispatch(logOutUser())}>
               Logout
             </Link>
           </>

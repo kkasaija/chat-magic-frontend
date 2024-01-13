@@ -1,7 +1,7 @@
 /* eslint-disable no-empty-pattern */
 /* eslint-disable no-unused-vars */
 import { createSlice } from "@reduxjs/toolkit";
-import { logInStatusCheck, logInUser } from "./authOps";
+import { logInStatusCheck, logInUser, logOutUser } from "./authOps";
 
 const initialState = {
   isLoggedIn: false,
@@ -32,16 +32,19 @@ const authSlice = createSlice({
       })
 
       .addCase(logInUser.fulfilled, (state, { payload }) => {
-        console.log(payload)
         state.isLoading = false;
-        state.isLoggedIn = payload.loggedIn
+        state.isLoggedIn = payload.loggedIn;
         state.authData = payload;
-
       })
 
       .addCase(logInUser.rejected, (state, { error }) => {
         state.isLoading = false;
         state.error = error;
+      })
+
+      .addCase(logOutUser.fulfilled, (state) => {
+        state.isLoggedIn = false;
+        state.authData = {}
       });
   },
 });
