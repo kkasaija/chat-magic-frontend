@@ -1,12 +1,13 @@
-/* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
-import UserAuth from "../context/UserAuth";
 import { useNavigate, Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { logInUser } from "../features/auth/authOps";
 import "../styles/Login.scss";
 
 const Login = () => {
-  const { userInfo, logInUser, setUserInfo } = UserAuth();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { isLoggedIn } = useSelector((state) => state.auth);
   const initialState = { email: "", password: "" };
 
   const [formData, setFormData] = useState(() => {
@@ -14,15 +15,14 @@ const Login = () => {
   });
 
   useEffect(() => {
-    if (userInfo.isLoggedIn) {
+    if (isLoggedIn) {
       navigate("/");
     }
-  }, [navigate, userInfo.isLoggedIn]);
+  }, [navigate, isLoggedIn]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setUserInfo((prevState) => ({ ...prevState, logInInfo: formData }));
-    logInUser();
+    dispatch(logInUser(formData));
     setFormData(initialState);
   };
 
