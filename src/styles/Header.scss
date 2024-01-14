@@ -1,0 +1,30 @@
+@import "./colors.scss";
+
+.container {
+  display: flex;
+  background-color: $primary-color;
+  height: 50px;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  justify-content: space-between;
+  font-family: "Poppins", sans-serif;
+}
+
+.logo,
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo > a,
+.nav-links > a {
+  color: $font-primary;
+  text-decoration: none;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.nav-links > a {
+  margin-left: 10px;
+}
