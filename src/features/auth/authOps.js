@@ -34,3 +34,17 @@ export const logOutUser = createAsyncThunk(
     });
   }
 );
+
+export const registerUser = createAsyncThunk(
+  "auth/registerUser",
+  async (registerationInfo, thunkAPI) => {
+    const res = await BaseUrl.post(
+      "/api/auth/register",
+      registerationInfo
+    ).catch((error) => {
+      if (!error.response) throw error;
+      return thunkAPI.rejectWithValue(error.response);
+    });
+    return res;
+  }
+);

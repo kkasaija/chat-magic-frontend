@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { registerUser } from "../features/auth/authOps";
 import "../styles/Register.scss";
 
 const Register = () => {
+  const dispatch = useDispatch();
   const initialState = {
     name: "",
     email: "",
@@ -13,6 +16,12 @@ const Register = () => {
   const [formData, setFormData] = useState(() => {
     return initialState;
   });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(registerUser(formData));
+    setFormData(initialState);
+  };
 
   function handleInputChange(e) {
     setFormData((prevState) => ({
@@ -26,7 +35,7 @@ const Register = () => {
       <div>
         <p>Please create your account</p>
       </div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>
         <input
           type="text"
