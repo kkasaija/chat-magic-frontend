@@ -1,0 +1,17 @@
+// * {
+//   padding: 0;
+//   margin: 0 2px;
+// }
+
+html, body, #root {
+  height: 100dvh;
+}
+
+#root {
+ display: flex;
+ flex-direction: column;
+}
+
+body {
+  background-color: #9f9aaf63;
+}

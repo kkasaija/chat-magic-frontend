@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { logInStatusCheck } from "./features/auth/authOps";
+import "./styles/App.scss"
 
 const App = () => {
   const dispatch = useDispatch();
