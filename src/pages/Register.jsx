@@ -1,11 +1,20 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import { registerUser } from "../features/auth/authOps";
 import "../styles/Register.scss";
 
 const Register = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { authData } = useSelector((state) => state.auth);
+  
+  useEffect(() => {
+    //check if registration succeeded by looking into authData object
+    //authData shld not be empty if registration succeeded
+    if (JSON.stringify(authData) !== "{}") navigate("/login");
+  }, [authData, navigate]);
+
   const initialState = {
     name: "",
     email: "",

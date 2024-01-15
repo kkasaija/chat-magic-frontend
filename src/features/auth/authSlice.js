@@ -57,7 +57,6 @@ const authSlice = createSlice({
       })
 
       .addCase(registerUser.rejected, (state, { payload }) => {
-        console.log("payLoad: ", payload);
         state.isLoading = false;
         state.authData = {};
         state.error = payload.data;

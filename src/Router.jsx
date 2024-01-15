@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Register from "./pages/Register";
+import UsersList from "./pages/UsersList";
 import PrivateRoutes from "./components/PrivateRoutes";
 import App from "./App";
 
@@ -20,6 +21,7 @@ const router = createBrowserRouter(
 
       <Route path="/" element={<PrivateRoutes />}>
         <Route index element={<Home />} />
+        <Route path="users" element={<UsersList />} />
         <Route path="profile" element={<Profile />} />
       </Route>
     </Route>

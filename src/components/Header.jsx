@@ -9,12 +9,13 @@ const Header = () => {
   return (
     <div className="container">
       <div className="logo">
-        <Link to="/">Logo</Link>
+        <Link to="/">Chat Magic App</Link>
       </div>
       <div className="nav-links">
         {isLoggedIn ? (
           <>
             <Link to="/">Home</Link>
+            <Link to="/users">Users</Link>
             <Link to="/profile">Profile</Link>
             <Link to="/login" onClick={() => dispatch(logOutUser())}>
               Logout
