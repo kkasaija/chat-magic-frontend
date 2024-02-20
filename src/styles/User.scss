@@ -1,0 +1,30 @@
+@import "./colors.scss";
+
+#container {
+  max-width:  300px;
+  margin-top: 1vh;
+}
+
+.user-item-card {
+  background-color: $font-primary;
+  padding: 8px;
+  border-radius: 12px
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 20px;
+}
+
+.card-top a {
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
